@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yinxin Sun — Linux System &amp; Network Engineer</title>
+  <meta name="description" content="Resume of Yinxin Sun (孙寅鑫), Linux System & Network Engineer. High-performance network applications, OpenWrt, Netfilter, DPDK, LLM agents." />
+  <meta name="author" content="Yinxin Sun" />
+  <meta name="keywords" content="Yinxin Sun, 孙寅鑫, resume, cv, Linux, network engineer, OpenWrt, Netfilter, DPDK, C/C++, LLM agents" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <link rel="canonical" href="https://sunforthree.github.io/CV/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sunforthree.github.io/CV/" />
+  <meta property="og:site_name" content="Yinxin Sun's CV" />
+  <meta property="og:title" content="Yinxin Sun — Linux System &amp; Network Engineer" />
+  <meta property="og:description" content="Linux System & Network Engineer. High-performance network applications, OpenWrt, Netfilter, DPDK." />
+  <meta property="og:image" content="https://sunforthree.github.io/CV/avatar.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Yinxin Sun — Linux System &amp; Network Engineer" />
+
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!--
+    Resolve the initial language before first paint to avoid a flash of the
+    wrong language. Stored preference wins, otherwise fall back to browser
+    language. Without JavaScript the static default (English) stays visible.
+  -->
+  <script>
+    (function () {
+      try {
+        var lang = localStorage.getItem("cv-lang");
+        if (lang !== "en" && lang !== "cn") {
+          lang = (navigator.language || "en").toLowerCase().indexOf("zh") === 0 ? "cn" : "en";
+        }
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.lang = lang === "cn" ? "zh-CN" : "en";
+      } catch (e) { /* keep default */ }
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "dateModified": "2026-09-05",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Yinxin Sun",
+      "alternateName": "孙寅鑫",
+      "jobTitle": "Linux System & Network Engineer",
+      "description": "Linux System & Network Engineer. Experienced in building high-performance network applications, handling data/control path, and solving concurrency issues.",
+      "url": "https://sunforthree.github.io/CV/",
+      "image": "https://sunforthree.github.io/CV/avatar.jpg",
+      "email": "mailto:sunforthree@gmail.com",
+      "telephone": "+86 13253593015",
+      "address": { "@type": "Place", "name": "Xian, Shaanxi, China" },
+      "sameAs": [
+        "https://github.com/sunforthree",
+        "https://www.linkedin.com/in/yinxin-sun-a70044284/"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Qualcomm",
+        "url": "https://www.qualcomm.com/"
+      },
+      "alumniOf": [
+        { "@type": "EducationalOrganization", "name": "Xi'an Jiaotong University" },
+        { "@type": "EducationalOrganization", "name": "Zhengzhou University" }
+      ],
+      "knowsAbout": [
+        "Linux System Programming",
+        "Network Programming",
+        "C/C++/Python",
+        "OpenWrt",
+        "Kernel Bypass",
+        "Systems Concurrency",
+        "LLM Agents",
+        "System Architecture"
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Inline SVG sprite: social + UI icons -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="icon-github" viewBox="0 0 24 24">
+      <title>GitHub</title>
+      <path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    </symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24">
+      <title>LinkedIn</title>
+      <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </symbol>
+    <symbol id="icon-wechat" viewBox="0 0 16 16">
+      <title>WeChat</title>
+      <path fill="currentColor" d="M11.176 14.429c-2.665 0-4.826-1.8-4.826-4.018 0-2.22 2.159-4.02 4.824-4.02S16 8.191 16 10.411c0 1.21-.65 2.301-1.666 3.036a.32.32 0 0 0-.12.366l.218.81a.6.6 0 0 1 .029.117.166.166 0 0 1-.162.162.2.2 0 0 1-.092-.03l-1.057-.61a.5.5 0 0 0-.256-.074.5.5 0 0 0-.142.021 5.7 5.7 0 0 1-1.576.22M9.064 9.542a.647.647 0 1 0 .557-1 .645.645 0 0 0-.646.647.6.6 0 0 0 .09.353Zm3.232.001a.646.646 0 1 0 .546-1 .645.645 0 0 0-.644.644.63.63 0 0 0 .098.356"/>
+      <path fill="currentColor" d="M0 6.826c0 1.455.781 2.765 2.001 3.656a.385.385 0 0 1 .143.439l-.161.6-.1.373a.5.5 0 0 0-.032.14.19.19 0 0 0 .193.193q.06 0 .111-.029l1.268-.733a.6.6 0 0 1 .308-.088q.088 0 .171.025a6.8 6.8 0 0 0 1.625.26 4.5 4.5 0 0 1-.177-1.251c0-2.936 2.785-5.02 5.824-5.02l.15.002C10.587 3.429 8.392 2 5.796 2 2.596 2 0 4.16 0 6.826m4.632-1.555a.77.77 0 1 1-1.54 0 .77.77 0 0 1 1.54 0m3.875 0a.77.77 0 1 1-1.54 0 .77.77 0 0 1 1.54 0"/>
+    </symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+      <path d="M2 12h20"/>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="20" height="16" x="2" y="4" rx="2"/>
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+    </symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </symbol>
+    <symbol id="icon-languages" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m5 8 6 6"/>
+      <path d="m4 14 6-6 2-3"/>
+      <path d="M2 5h12"/>
+      <path d="M7 2h1"/>
+      <path d="m22 22-5-10-5 10"/>
+      <path d="M14 18h6"/>
+    </symbol>
+    <symbol id="icon-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+      <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/>
+      <rect x="6" y="14" width="12" height="8" rx="1"/>
+    </symbol>
+  </svg>
+
+  <!-- ══════════════════════ ENGLISH VERSION ══════════════════════ -->
+  <main class="container lang-en">
+    <article class="cv" aria-label="Resume content (English)">
+
+      <header class="cv-header">
+        <div class="identity">
+          <h1>Yinxin Sun</h1>
+          <p class="about">Linux System &amp; Network Engineer</p>
+          <p class="location">
+            <a href="https://www.google.com/maps/place/%E4%B8%AD%E5%9B%BD%E9%99%95%E8%A5%BF%E7%9C%81%E8%A5%BF%E5%AE%89%E5%B8%82" target="_blank" rel="noopener noreferrer" aria-label="Location: Xian, Shaanxi, China">
+              <svg class="icon icon-xs" aria-hidden="true"><use href="#icon-globe"/></svg>
+              Xian, Shaanxi, China
+            </a>
+          </p>
+
+          <ul class="contact-row no-print" aria-label="Contact links">
+            <li>
+              <a class="icon-btn" href="mailto:sunforthree@gmail.com" aria-label="Email">
+                <svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="icon-btn" href="tel:+8613253593015" aria-label="Phone">
+                <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="icon-btn" href="https://github.com/sunforthree" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="icon-btn" href="https://www.linkedin.com/in/yinxin-sun-a70044284/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg class="icon" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+              </a>
+            </li>
+            <li>
+              <button class="icon-btn" type="button" data-wechat aria-label="WeChat">
+                <svg class="icon" aria-hidden="true"><use href="#icon-wechat"/></svg>
+              </button>
+            </li>
+            <li>
+              <button class="icon-btn" type="button" data-print aria-label="Print resume">
+                <svg class="icon" aria-hidden="true"><use href="#icon-printer"/></svg>
+              </button>
+            </li>
+            <li>
+              <button class="icon-btn icon-btn-lang" type="button" data-lang-toggle aria-label="切换到中文">
+                <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-languages"/></svg>
+                <span class="lang-label">EN</span>
+              </button>
+            </li>
+          </ul>
+
+          <p class="print-contact">
+            <a href="mailto:sunforthree@gmail.com">sunforthree@gmail.com</a>
+            <span aria-hidden="true">/</span>
+            <a href="tel:+8613253593015">+86 13253593015</a>
+            <span aria-hidden="true">/</span>
+            <span>WeChat: sunforthree</span>
+          </p>
+        </div>
+
+        <img class="avatar" src="avatar.jpg" width="112" height="112" alt="Yinxin Sun's profile picture" />
+      </header>
+
+      <section aria-labelledby="en-about">
+        <h2 id="en-about">About</h2>
+        <p class="summary">Linux System &amp; Network Engineer. Experienced in building high-performance network applications, handling data/control path, and solving concurrency issues. Passionate about open source and AI-driven programs.</p>
+      </section>
+
+      <section aria-labelledby="en-work">
+        <h2 id="en-work">Work Experience</h2>
+        <article class="item">
+          <div class="item-head">
+            <h3 class="item-org">
+              <a class="org-link" href="https://www.qualcomm.com/" target="_blank" rel="noopener noreferrer" aria-label="Qualcomm company website">Qualcomm</a>
+              <ul class="badges" aria-label="Technologies used">
+                <li><span class="badge">Linux</span></li>
+                <li><span class="badge">Netdev</span></li>
+                <li><span class="badge">C/C++/Python</span></li>
+                <li><span class="badge">OpenWrt</span></li>
+                <li><span class="badge">Netfilter</span></li>
+                <li><span class="badge">Modem/Auto</span></li>
+              </ul>
+            </h3>
+            <p class="period">2023 - Present</p>
+          </div>
+          <h4 class="item-title">Software Engineer</h4>
+          <div class="item-body">
+            <p>Building user-space and kernel-space applications and SDK for Linux network and system functionality.</p>
+            <ul class="highlights">
+              <li>Involved in SDX ARM chipset modem and automotive projects, optimizing network performance and reliability.</li>
+              <li>Handled multiple OpenWrt system daemon-level components: procd, netifd, dhcpd... improving system stability and performance.</li>
+              <li>Implemented high-level WAN/LAN network management features and SDK for modem and automotive use cases, solving multiple WAN, bridge LAN and VLAN concurrency issues.</li>
+              <li>Implemented and optimized Netfilter modules in user space (nftables) and kernel space, for NAT, port triggering and so on.</li>
+              <li>Built automated feature test framework for multiple Linux/Windows servers and clients, AI agent-driven.</li>
+              <li>Implemented agent-level tool for SourceInsight IDE with LangChain and internal SDK.</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section aria-labelledby="en-projects">
+        <h2 id="en-projects">Project Experience</h2>
+        <article class="item">
+          <div class="item-head">
+            <h3 class="item-org">
+              Graduate Project
+              <ul class="badges" aria-label="Technologies used">
+                <li><span class="badge">C/C++</span></li>
+                <li><span class="badge">DPDK</span></li>
+                <li><span class="badge">Programming Network</span></li>
+                <li><span class="badge">User-space DSL</span></li>
+              </ul>
+            </h3>
+            <p class="period">2021 - 2023</p>
+          </div>
+          <h4 class="item-title">High-Speed Network Behavior Detection System</h4>
+          <div class="item-body">
+            <p>Line-rate (20Gbps) network behavior detection system based on user-space DSL and kernel-space DPDK for high performance.</p>
+            <ul class="highlights">
+              <li>User-friendly DSL for defining complex network behavior patterns; supports both stateful and stateless detection</li>
+              <li>High-speed detection using fine-grained traffic semantics</li>
+              <li>DPDK-based packet processing pipeline, achieving 20Gbps performance with multiple complexity rulesets</li>
+              <li>Reduced memory usage by 30% compared to traditional methods</li>
+              <li>Deployed in a real industrial network environment as detection system</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section aria-labelledby="en-education">
+        <h2 id="en-education">Education</h2>
+        <article class="item">
+          <div class="item-head">
+            <h3 class="item-org">Xi'an Jiaotong University</h3>
+            <p class="period">2021 - 2024</p>
+          </div>
+          <div class="item-body">
+            <p class="degree">Master - Computer Technology - Advanced NeTworking System Lab</p>
+            <p class="degree-note">Involved in research on programming network stack and high-performance network.</p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3 class="item-org">Zhengzhou University</h3>
+            <p class="period">2017 - 2021</p>
+          </div>
+          <div class="item-body">
+            <p class="degree">Bachelor - Computer Science and Technology - Hanwei IoT Lab</p>
+            <p class="degree-note">Learned basic CS theory and involved in IOT related project.</p>
+          </div>
+        </article>
+      </section>
+
+      <section aria-labelledby="en-skills">
+        <h2 id="en-skills">Skills</h2>
+        <ul class="skills" aria-label="List of skills">
+          <li><span class="skill">Linux System Programming</span></li>
+          <li><span class="skill">Network Programming</span></li>
+          <li><span class="skill">C/C++/Python</span></li>
+          <li><span class="skill">OpenWrt</span></li>
+          <li><span class="skill">Kernel Bypass</span></li>
+          <li><span class="skill">Systems Concurrency</span></li>
+          <li><span class="skill">LLM Agents</span></li>
+          <li><span class="skill">System Architecture</span></li>
+        </ul>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- ══════════════════════ 中文版本 ══════════════════════ -->
+  <main class="container lang-cn">
+    <article class="cv" aria-label="简历内容（中文）">
+
+      <header class="cv-header">
+        <div class="identity">
+          <h1>孙寅鑫</h1>
+          <p class="about">Linux系统与网络工程师</p>
+          <p class="location">
+            <a href="https://www.google.com/maps/place/%E4%B8%AD%E5%9B%BD%E9%99%95%E8%A5%BF%E7%9C%81%E8%A5%BF%E5%AE%89%E5%B8%82" target="_blank" rel="noopener noreferrer" aria-label="所在地：西安，陕西，中国">
+              <svg class="icon icon-xs" aria-hidden="true"><use href="#icon-globe"/></svg>
+              西安, 陕西, 中国
+            </a>
+          </p>
+
+          <ul class="contact-row no-print" aria-label="联系方式">
+            <li>
+              <a class="icon-btn" href="mailto:sunforthree@gmail.com" aria-label="邮箱">
+                <svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="icon-btn" href="tel:+8613253593015" aria-label="电话">
+                <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="icon-btn" href="https://github.com/sunforthree" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="icon-btn" href="https://www.linkedin.com/in/yinxin-sun-a70044284/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg class="icon" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+              </a>
+            </li>
+            <li>
+              <button class="icon-btn" type="button" data-wechat aria-label="微信">
+                <svg class="icon" aria-hidden="true"><use href="#icon-wechat"/></svg>
+              </button>
+            </li>
+            <li>
+              <button class="icon-btn" type="button" data-print aria-label="打印简历">
+                <svg class="icon" aria-hidden="true"><use href="#icon-printer"/></svg>
+              </button>
+            </li>
+            <li>
+              <button class="icon-btn icon-btn-lang" type="button" data-lang-toggle aria-label="Switch to English">
+                <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-languages"/></svg>
+                <span class="lang-label">中文</span>
+              </button>
+            </li>
+          </ul>
+
+          <p class="print-contact">
+            <a href="mailto:sunforthree@gmail.com">sunforthree@gmail.com</a>
+            <span aria-hidden="true">/</span>
+            <a href="tel:+8613253593015">+86 13253593015</a>
+            <span aria-hidden="true">/</span>
+            <span>微信：sunforthree</span>
+          </p>
+        </div>
+
+        <img class="avatar" src="avatar.jpg" width="112" height="112" alt="孙寅鑫的个人照片" />
+      </header>
+
+      <section aria-labelledby="cn-about">
+        <h2 id="cn-about">个人简介</h2>
+        <p class="summary">Linux系统与网络工程师。擅长构建高性能网络应用、处理数据/控制面、解决并发问题。热衷于开源和AI相关项目开发。</p>
+      </section>
+
+      <section aria-labelledby="cn-work">
+        <h2 id="cn-work">工作经历</h2>
+        <article class="item">
+          <div class="item-head">
+            <h3 class="item-org">
+              <a class="org-link" href="https://www.qualcomm.com/" target="_blank" rel="noopener noreferrer" aria-label="Qualcomm 公司官网">Qualcomm</a>
+              <ul class="badges" aria-label="使用的技术">
+                <li><span class="badge">Linux</span></li>
+                <li><span class="badge">Netdev</span></li>
+                <li><span class="badge">C/C++/Python</span></li>
+                <li><span class="badge">OpenWrt</span></li>
+                <li><span class="badge">Netfilter</span></li>
+                <li><span class="badge">Modem/Auto</span></li>
+              </ul>
+            </h3>
+            <p class="period">2023 - 至今</p>
+          </div>
+          <h4 class="item-title">软件工程师</h4>
+          <div class="item-body">
+            <p>为Linux网络和系统功能构建用户空间和内核空间应用程序及SDK。</p>
+            <ul class="highlights">
+              <li>参与SDX ARM芯片组调制解调器和汽车项目，优化网络性能和可靠性。</li>
+              <li>处理多个OpenWrt系统守护进程级组件：procd、netifd、dhcpd...提高系统稳定性和性能。</li>
+              <li>实现高级WAN/LAN网络管理功能和SDK，用于调制解调器和汽车用例，解决多WAN、桥接LAN和VLAN并发问题。</li>
+              <li>在用户空间(nftables)和内核空间实现和优化Netfilter模块，用于NAT、端口触发等。</li>
+              <li>构建自动化功能测试框架，支持多Linux/Windows服务器和客户端，AI agent驱动。</li>
+              <li>使用LangChain和内部SDK实现SourceInsight IDE的agent级工具。</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section aria-labelledby="cn-projects">
+        <h2 id="cn-projects">项目经历</h2>
+        <article class="item">
+          <div class="item-head">
+            <h3 class="item-org">
+              毕业设计
+              <ul class="badges" aria-label="使用的技术">
+                <li><span class="badge">C/C++</span></li>
+                <li><span class="badge">DPDK</span></li>
+                <li><span class="badge">Programming Network</span></li>
+                <li><span class="badge">User-space DSL</span></li>
+              </ul>
+            </h3>
+            <p class="period">2021 - 2023</p>
+          </div>
+          <h4 class="item-title">高速网络行为检测系统</h4>
+          <div class="item-body">
+            <p>基于用户空间DSL和内核空间DPDK的线速(20Gbps)网络行为检测系统，实现高性能检测。</p>
+            <ul class="highlights">
+              <li>用户友好的DSL用于定义复杂网络行为模式；支持有状态和无状态检测</li>
+              <li>使用细粒度流量语义实现高速检测</li>
+              <li>基于DPDK的数据包处理管道，在多复杂规则集下实现20Gbps性能</li>
+              <li>与传统方法相比减少30%内存使用</li>
+              <li>作为检测系统部署在真实工业网络环境中</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section aria-labelledby="cn-education">
+        <h2 id="cn-education">教育经历</h2>
+        <article class="item">
+          <div class="item-head">
+            <h3 class="item-org">西安交通大学</h3>
+            <p class="period">2021 - 2024</p>
+          </div>
+          <div class="item-body">
+            <p class="degree">硕士 - 计算机技术 - ANTS高性能网络实验室</p>
+            <p class="degree-note">专注于网络系统与高性能计算研究，参与多个国家级科研项目。</p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="item-head">
+            <h3 class="item-org">郑州大学</h3>
+            <p class="period">2017 - 2021</p>
+          </div>
+          <div class="item-body">
+            <p class="degree">本科 - 计算机科学与技术 - 汉威物联网实验室</p>
+            <p class="degree-note">系统学习计算机基础理论，参与多个物联网应用开发项目。</p>
+          </div>
+        </article>
+      </section>
+
+      <section aria-labelledby="cn-skills">
+        <h2 id="cn-skills">技能</h2>
+        <ul class="skills" aria-label="技能列表">
+          <li><span class="skill">Linux System Programming</span></li>
+          <li><span class="skill">Network Programming</span></li>
+          <li><span class="skill">C/C++/Python</span></li>
+          <li><span class="skill">OpenWrt</span></li>
+          <li><span class="skill">Kernel Bypass</span></li>
+          <li><span class="skill">Systems Concurrency</span></li>
+          <li><span class="skill">LLM Agents</span></li>
+          <li><span class="skill">System Architecture</span></li>
+        </ul>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- Shared WeChat dialog -->
+  <dialog id="wechat-dialog" aria-labelledby="wechat-dialog-title">
+    <div class="dialog-body">
+      <h2 id="wechat-dialog-title" class="dialog-title">WeChat ID</h2>
+      <p id="wechat-dialog-desc" class="dialog-desc">Copy the WeChat ID below to add me on WeChat.</p>
+      <div class="dialog-row">
+        <code id="wechat-dialog-id" class="dialog-id">sunforthree</code>
+        <button type="button" class="btn" id="wechat-dialog-copy">Copy</button>
+      </div>
+      <button type="button" class="dialog-close" id="wechat-dialog-close" aria-label="Close">&times;</button>
+    </div>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

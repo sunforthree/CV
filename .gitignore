@@ -1,0 +1,9 @@
+# local editor/tooling state
+.claude/
+.vscode/
+.idea/
+.DS_Store
+
+# logs and temp files
+*.log
+*.tmp
